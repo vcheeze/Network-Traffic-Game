@@ -20,4 +20,4 @@ Hayat: design user interface
 
 Theo: research on algorithm for traffic simulation
 
-Peter: 
+Peter: develop basic backend ideas

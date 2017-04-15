@@ -1,4 +1,4 @@
-# Traffic-Simulation
+# Network Traffic: A Game
 TED Final Project
 
 ## Purpose

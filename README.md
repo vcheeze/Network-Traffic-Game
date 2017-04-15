@@ -28,3 +28,4 @@ Peter: develop basic backend ideas
 * http://vax.herokuapp.com/ (game example)
 * https://www.jasondavies.com/animated-bezier/ (bezier animations)
 * https://bost.ocks.org/mike/fisheye/ (fish-eye distortion)
+* https://d3plus.org/examples/basic/9042919/ (simple static network)

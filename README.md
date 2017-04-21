@@ -1,20 +1,35 @@
+<<<<<<< Updated upstream
 # Network Traffic: A Game
+=======
+# Traffic-Simulation
+
+>>>>>>> Stashed changes
 TED Final Project
 
 ## Purpose
-Motivation: to help economic development --> what are the more specific goals?
+
+Motivation: 
+
+* Enable governments and third-parties to make informed decisions about road infrastructure changes
+* Visually depict how specific decisions affect the status quo
+* Create a consistent way to test new proposed changes and evaluate them
+
 
 ## Scope
-Simulation for building a new road --> will building the road actually alleviate traffic?
 
-Simulating actual road structures in specific regions --> connect to the UAE?
+Application that does a simple simulation for building a new road given a set of pre-existing roads and their respective loads.
+
+Simulating actual road structures in specific regions, ability to create your own enviroment by inserting new nodes and their respecive load/traffic. 
 
 ## Next steps...
+
 1. User Experience
 2. Interface
 3. Motivations of the project
 4. Goals of the project
 5. More specific scope of the project
+
+
 
 Hayat: design user interface
 

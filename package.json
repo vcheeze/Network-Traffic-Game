@@ -9,6 +9,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "cytoscape": "3.0.0",
     "body-parser": "^1.5.2",
     "ejs": "*",
     "express": "4.x",

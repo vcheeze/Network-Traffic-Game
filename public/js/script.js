@@ -86,5 +86,16 @@ $(function() {
 			'background-color': '#999'
 		});
 	});
-});
+
 	
+	$('#cy').click(function(e) {
+		var mouseX = e.pageX;
+		var mouseY = e.pageY;
+		// console.log(x + ' ' + y);
+		cy.add({
+			group: 'nodes',
+			data: { id: 'f' },
+			position: {x: mouseX, y: mouseY}
+		});
+	});
+});

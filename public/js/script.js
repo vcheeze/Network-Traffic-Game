@@ -65,15 +65,26 @@ $(function() {
 	  	}
 	});
 
-	var bfs = cy.elements().bfs('#a', function(){}, true);
-	var i = 0;
-	var highlightNext = function() {
-		if (i < bfs.path.length) {
-			bfs.path[i].addClass('highlighted');
-			i++;
-			setTimeout(highlightNext, 1000);
-		}
-	};
-	highlightNext();
+	// mouse click event
+	cy.on('click', 'node', function(e) {
+		var node = e.target;
+		console.log('clicked ' + node.id());
+	});
+
+	// mouseover event
+	cy.on('mouseover', 'node', function(e) {
+		var node = e.target;
+		node.style({
+			'background-color': '#333'
+		});
+	});
+
+	// mouseout event
+	cy.on('mouseout', 'node', function(e) {
+		var node = e.target;
+		node.style({
+			'background-color': '#999'
+		});
+	});
 });
 	

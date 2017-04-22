@@ -1,23 +1,9 @@
 $(function() {
+	var count = 0;
 	var cy = cytoscape({
 		container: $('#cy'),
 
-		elements: [ // list of graph elements to start with
-		    { // node a
-		      data: { id: 'a' }
-		    },
-		    { // node b
-		      data: { id: 'b' }
-		    },
-		    { // node c
-		      data: { id: 'c' }
-		    },
-		    { // node d
-		      data: { id: 'd' }
-		    },
-		    { // node e
-		      data: { id: 'e' }
-		    },
+		/*elements: [ // list of graph elements to start with
 		    { // edge ab
 		      data: { id: 'ab', source: 'a', target: 'b' }
 		    },
@@ -39,7 +25,7 @@ $(function() {
 		    { // edge de
 		      data: { id: 'de', source: 'd', target: 'e' }
 		    }
-	  	],
+	  	],*/
 
 	  	style: cytoscape.stylesheet().selector('node').css({
 	  		'content': 'data(id)'
@@ -58,10 +44,10 @@ $(function() {
 	  	}),
 
 	  	layout: {
-		    name: 'breadthfirst',
-		    directed: true,
+		    name: 'preset'
+		    /*directed: true,
 		    roots: '#a',
-		    padding: 10
+		    padding: 10*/
 	  	}
 	});
 
@@ -87,15 +73,82 @@ $(function() {
 		});
 	});
 
-	
+
 	$('#cy').click(function(e) {
 		var mouseX = e.pageX;
 		var mouseY = e.pageY;
 		// console.log(x + ' ' + y);
-		cy.add({
-			group: 'nodes',
-			data: { id: 'f' },
-			position: {x: mouseX, y: mouseY}
-		});
+		if (count === 0) {
+			cy.add({
+				group: 'nodes',
+				data: { id: 'a' },
+				position: {x: mouseX, y: mouseY}
+			});
+		}
+		else if (count === 1) {
+			cy.add({
+				group: 'nodes',
+				data: { id: 'b' },
+				position: {x: mouseX, y: mouseY}
+			});
+		}
+		else if (count === 2) {
+			cy.add({
+				group: 'nodes',
+				data: { id: 'c' },
+				position: {x: mouseX, y: mouseY}
+			});
+		}
+		else if (count === 3) {
+			cy.add({
+				group: 'nodes',
+				data: { id: 'd' },
+				position: {x: mouseX, y: mouseY}
+			});
+		}
+		else if (count === 4) {
+			cy.add({
+				group: 'nodes',
+				data: { id: 'e' },
+				position: {x: mouseX, y: mouseY}
+			});
+		}
+		else if (count === 5) {
+			cy.add({
+				group: 'nodes',
+				data: { id: 'f' },
+				position: {x: mouseX, y: mouseY}
+			});
+		}
+		count++;
 	});
+
+	const Nodes = {
+		A: 1,
+		B: 2,
+		C: 3,
+		D: 4,
+		E: 5,
+		F: 6,
+		G: 7,
+		H: 8,
+		I: 9,
+		J: 10,
+		K: 11,
+		L: 12,
+		M: 13,
+		N: 14,
+		O: 15,
+		P: 16,
+		Q: 17,
+		R: 18,
+		S: 19,
+		T: 20,
+		U: 21,
+		V: 22,
+		W: 23,
+		X: 24,
+		Y: 25,
+		Z: 26
+	}
 });

@@ -2,32 +2,12 @@ $(function() {
 	var count = 0,
 		nodeID = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 				  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+	// create the network graph
 	var cy = cytoscape({
 		container: $('#cy'),
-
-		/*elements: [ // list of graph elements to start with
-		    { // edge ab
-		      data: { id: 'ab', source: 'a', target: 'b' }
-		    },
-		    { // edge ae
-		      data: { id: 'ae', source: 'a', target: 'e' }
-		    },
-		    { // edge bc
-		      data: { id: 'bc', source: 'b', target: 'c' }
-		    },
-		    { // edge be
-		      data: { id: 'be', source: 'b', target: 'e' }
-		    },
-		    { // edge cd
-		      data: { id: 'cd', source: 'c', target: 'd' }
-		    },
-		    { // edge ce
-		      data: { id: 'ce', source: 'c', target: 'e' }
-		    },
-		    { // edge de
-		      data: { id: 'de', source: 'd', target: 'e' }
-		    }
-	  	],*/
+	  	zoomingEnabled: false, // disable zooming
+		userPanningEnabled: false, // disable panning
 
 	  	style: cytoscape.stylesheet().selector('node').css({
 	  		'content': 'data(id)'
@@ -47,17 +27,15 @@ $(function() {
 
 	  	layout: {
 		    name: 'preset'
-		    /*directed: true,
-		    roots: '#a',
-		    padding: 10*/
 	  	}
 	});
 
-	// mouse click event
+
+/*	// mouse click event
 	cy.on('click', 'node', function(e) {
 		var node = e.target;
 		console.log('clicked ' + node.id());
-	});
+	});*/
 
 	// mouseover event
 	cy.on('mouseover', 'node', function(e) {
@@ -75,19 +53,21 @@ $(function() {
 		});
 	});
 
-
 	$('#cy').click(function(e) {
 		var mouseX = e.pageX;
 		var mouseY = e.pageY;
 		// console.log(x + ' ' + y);
-		if (count > 25) {
+		if (count > 25) { // only allow 26 nodes
 			return;
 		}
+		var offsetTop = $(window).height() * 0.15; // this value corresponds with height of div set in css
 		cy.add({
 			group: 'nodes',
 			data: { id: nodeID[count] },
-			position: {x: mouseX, y: mouseY}
+			position: {x: mouseX, y: mouseY - offsetTop}
 		});
 		count++;
 	});
+
+
 });

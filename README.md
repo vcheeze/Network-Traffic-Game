@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
 # Network Traffic: A Game
-=======
-# Traffic-Simulation
-
->>>>>>> Stashed changes
 TED Final Project
 
 ## Purpose

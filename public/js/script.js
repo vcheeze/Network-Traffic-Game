@@ -1,5 +1,7 @@
 $(function() {
-	var count = 0;
+	var count = 0,
+		nodeID = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+				  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 	var cy = cytoscape({
 		container: $('#cy'),
 
@@ -78,77 +80,14 @@ $(function() {
 		var mouseX = e.pageX;
 		var mouseY = e.pageY;
 		// console.log(x + ' ' + y);
-		if (count === 0) {
-			cy.add({
-				group: 'nodes',
-				data: { id: 'a' },
-				position: {x: mouseX, y: mouseY}
-			});
+		if (count > 25) {
+			return;
 		}
-		else if (count === 1) {
-			cy.add({
-				group: 'nodes',
-				data: { id: 'b' },
-				position: {x: mouseX, y: mouseY}
-			});
-		}
-		else if (count === 2) {
-			cy.add({
-				group: 'nodes',
-				data: { id: 'c' },
-				position: {x: mouseX, y: mouseY}
-			});
-		}
-		else if (count === 3) {
-			cy.add({
-				group: 'nodes',
-				data: { id: 'd' },
-				position: {x: mouseX, y: mouseY}
-			});
-		}
-		else if (count === 4) {
-			cy.add({
-				group: 'nodes',
-				data: { id: 'e' },
-				position: {x: mouseX, y: mouseY}
-			});
-		}
-		else if (count === 5) {
-			cy.add({
-				group: 'nodes',
-				data: { id: 'f' },
-				position: {x: mouseX, y: mouseY}
-			});
-		}
+		cy.add({
+			group: 'nodes',
+			data: { id: nodeID[count] },
+			position: {x: mouseX, y: mouseY}
+		});
 		count++;
 	});
-
-	const Nodes = {
-		A: 1,
-		B: 2,
-		C: 3,
-		D: 4,
-		E: 5,
-		F: 6,
-		G: 7,
-		H: 8,
-		I: 9,
-		J: 10,
-		K: 11,
-		L: 12,
-		M: 13,
-		N: 14,
-		O: 15,
-		P: 16,
-		Q: 17,
-		R: 18,
-		S: 19,
-		T: 20,
-		U: 21,
-		V: 22,
-		W: 23,
-		X: 24,
-		Y: 25,
-		Z: 26
-	}
 });

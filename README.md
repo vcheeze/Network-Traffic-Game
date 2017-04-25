@@ -33,9 +33,6 @@ Theo: research on algorithm for traffic simulation
 Peter: develop basic backend ideas
 
 ## Some resources
-* http://bl.ocks.org/rkirsling/5001347 (force-directed graph)
-* http://bl.ocks.org/benzguo/4370043 (pan-and-zoom)
 * http://vax.herokuapp.com/ (game example)
-* https://www.jasondavies.com/animated-bezier/ (bezier animations)
-* https://bost.ocks.org/mike/fisheye/ (fish-eye distortion)
-* https://d3plus.org/examples/basic/9042919/ (simple static network)
+* http://js.cytoscape.org/ (frontend network library)
+

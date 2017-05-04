@@ -23,7 +23,7 @@ switch (scenario) {
             new Edge('3', vertexes[3], vertexes[1], y/100)
         ];
 
-        var graph1 = new Graph(vertexes, edges);
+        var graph = new Graph(vertexes, edges);
         break;
     /*========== Scenario 2 ==========*/
     case 2:
@@ -44,7 +44,28 @@ switch (scenario) {
             new Edge('3', vertexes[3], vertexes[1], 60)
         ];
 
-        var graph1 = new Graph(vertexes, edges);
+        var graph = new Graph(vertexes, edges);
+        break;
+    /*========== Scenario 3 ==========*/
+    case 3:
+        total = 300;
+        x = 150, y = total - x;
+
+        vertexes = [
+            new Vertex('0', 'a'),
+            new Vertex('1', 'b'),
+            new Vertex('2', 'c'),
+            new Vertex('3', 'd')
+        ];
+
+        edges = [
+            new Edge('0', vertexes[0], vertexes[2], x/100),
+            new Edge('1', vertexes[0], vertexes[3], 3.1),
+            new Edge('2', vertexes[2], vertexes[1], 3.1),
+            new Edge('3', vertexes[3], vertexes[1], y/100)
+        ];
+
+        var graph = new Graph(vertexes, edges);
         break;
     default:
         console.log("No Scenario selected");

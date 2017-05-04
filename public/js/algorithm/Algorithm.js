@@ -6,9 +6,9 @@
 /*
  * Algorithm class
  */
-function DijkstraAlgorithm() {
-    this.nodes = [];
-    this.edges = [];
+function DijkstraAlgorithm(graph) {    
+    this.nodes = graph.getVertexes();
+    this.edges = graph.getEdges();
     this.settledNodes = [];
     this.unSettledNodes = [];
     this.predecessors = {};

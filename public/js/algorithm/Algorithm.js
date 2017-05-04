@@ -153,8 +153,8 @@ Vertex.prototype.getName = function() {
 };
 
 /*Vertex.prototype.hashCode = function() {
-    final int prime = 31;
-    int result = 1;
+    var prime = 31;
+    var result = 1;
     result = prime * result + ((id == null) ? 0 : id.hashCode());
     return result;
 };*/
@@ -178,6 +178,7 @@ Vertex.prototype.equals = function(obj) {
 Vertex.prototype.toString = function() {
     return this.name;
 };
+
 
 /*
  * Edge class

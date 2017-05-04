@@ -16,11 +16,9 @@ function DijkstraAlgorithm() {
 }
 
 DijkstraAlgorithm.prototype.execute = function(source) {
-    this.settledNodes = [];
-    this.unSettledNodes = [];
     this.distance[source] = 0;
-    this.predecessors = {};
     this.unSettledNodes.push(source);
+
     while (this.unSettledNodes.length > 0) {
         var node = this.getMinimum(this.unSettledNodes);
         this.settledNodes.push(node);
@@ -122,39 +120,6 @@ DijkstraAlgorithm.prototype.getPath = function(target) {
 
 
 /*
- * Edge class
- */
-function Edge(id, source, destination, weight) {
-
-    this.id = id;
-    this.source = new Vertex();
-    this.destination = new Vertex();
-    this.weight = weight;
-}
-
-
-Edge.prototype.getId = function() {
-    return this.id;
-};
-
-Edge.prototype.getDestination = function() {
-    return this.destination;
-};
-
-Edge.prototype.getSource = function() {
-    return this.source;
-};
-
-Edge.prototype.getWeight = function() {
-    return this.weight;
-};
-
-Edge.prototype.toString = function() {
-    return this.source + " " + this.destination;
-};
-
-
-/*
  * Graph class
  */
 function Graph(vertexes, edges) {
@@ -212,4 +177,36 @@ Vertex.prototype.equals = function(obj) {
 
 Vertex.prototype.toString = function() {
     return this.name;
+};
+
+/*
+ * Edge class
+ */
+function Edge(id, source, destination, weight) {
+
+    this.id = id;
+    this.source = new Vertex();
+    this.destination = new Vertex();
+    this.weight = weight;
+}
+
+
+Edge.prototype.getId = function() {
+    return this.id;
+};
+
+Edge.prototype.getDestination = function() {
+    return this.destination;
+};
+
+Edge.prototype.getSource = function() {
+    return this.source;
+};
+
+Edge.prototype.getWeight = function() {
+    return this.weight;
+};
+
+Edge.prototype.toString = function() {
+    return this.source + " " + this.destination;
 };

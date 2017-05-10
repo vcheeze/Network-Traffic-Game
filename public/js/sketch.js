@@ -94,14 +94,14 @@ function mousePressed(){
 //     this.location = createVector(mouseX, mouseY); 
 // }
 
-Vertex.prototype.displayVertex = function(){
+/*Vertex.prototype.displayVertex = function(){
 	ellipseMode(CENTER);
 	push();
 	if (this == pressedVertex1 || this == pressedVertex2) fill(0,0,200); 
 	ellipse(this.location.x,this.location.y,this.radius*2,this.radius*2);
 	fill(100);
 	pop();
-}
+};*/
 
 function vertexPressed(vertex){
 	var d = dist(mouseX, mouseY, vertex.location.x, vertex.location.y);
@@ -128,4 +128,6 @@ Edge.prototype.displayEdge = function(){
 	text(this.weight,(this.vertex1.x+this.vertex2.x)/2,(this.vertex1.y+this.vertex2.y)/2);
 	line(this.vertex1.x,this.vertex1.y,this.vertex2.x,this.vertex2.y);
 	pop();
-}
+};
+
+

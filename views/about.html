@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Documententation</title>
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<style>
+		body {
+			margin-left: 20px;
+			font-family: 'Comfortaa', sans-serif;
+			line-height: 150%;
+		}
+	</style>
+</head>
+<body>
+	<h1>About</h1>
+	<h2>Introduction</h2>
+	<p>The purpose of our Traffic Simulation Game is to enable governments and third-parties to make informed decisions
+		about making changes to existing road infrastructure. We want to empower the user to see how a specific decision
+		about road infrastructure change affects the status quo by presenting the information in a visually rich yet
+		simple manner. Ultimately we strive to create a consistent way to test proposed changes and evaluate them
+		according to social benefit and economic prudence.</p>
+
+	<h2>Motivation</h2>
+	<p>We have been demonstrated in class that often times an economic decision that strives to improve the existing
+		conditions and introduce social benefits, while seeming sound and well-reasoned, can in fact have a negative
+		effect on society and make things worse off. In the particular case of building a new road with the intention
+		to alleviate traffic but in fact increasing overall journey time, German mathematician Dietrich Braess
+		identified the paradox for the first time in 1968. Since, it has been described as Braess’ Paradox.</p>
+	<p>In terms of Game Theory, Braess’ Paradox demonstrates a tangible case where the Nash Equilibrium may not result
+		in with the best overall usage of a network, nor an optimal outcome for all players given the previous
+		conditions. A change in the network of roads produces a new game structure, which leads to a situation similar
+		to prisoner's dilemma. In the original Nash equilibrium, drivers had no incentive to change their routes. When a
+		new road is built, under Braess' paradox, drivers will continue to switch their roads until they reach Nash
+		equilibrium despite the increase in overall journey time.</p>
+	<p>One particular example in Braess’ Paradox in real life is the closure of 42nd street in New York City in 1990.
+		While some might expect the closure of the road to worsen traffic conditions in the neighborhood, in fact it
+		reduced the amount of congestion in the area.</p>
+
+	<h2>Project Details</h2>
+	<p>Our project undertakes an approach similar to hypothesis testing in statistics. The simulation provides the user
+		with a visual representation of the road network. Given the amount of traffic/load of each road on the network,
+		upon constructing a new edge our simulation will be able to confirm or deny the hypothesis whether this new road
+		will reduce overall journey time. The simulation will calculating the Nash Equilibrium for the new network and
+		display the new traffic loads on each road, ultimately calculating the new total travel time, and comparing it
+		with the initial time.</p>
+
+	<h3>Some of the core features of our application will include:</h3>
+	<ul>
+		<li>
+			Ability to create a custom graph and manually input the traffic for each edge, in order to facilitate
+			representation of various dynamic environments.
+		</li>
+		<li>
+			Calculate initial total journey time, given a number of travelers
+		</li>
+		<li>
+			Ability to add/remove roads on existing graphs
+		</li>
+		<li>
+			Identify new Nash Equilibrium after addition/removal of a road
+		</li>
+		<li>
+			Calculate new traffic loads for each edge
+		</li>
+		<li>
+			Calculate new total journey time
+		</li>
+		<li>
+			Display an explicit advice on whether the addition/removal of a road is socially-beneficial
+		</li>
+	</ul>
+
+	<h2>Conclusion</h2>
+	<p>Our Traffic Simulation Game creates a consistent way to test proposed changes in road infrastructure and evaluate
+		them according to social benefit. By using the principles of Game Theory, we empower the user to avoid
+		misinformed decisions and not fall into Braess’ Paradox.</p>
+</body>
+</html>

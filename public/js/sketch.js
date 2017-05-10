@@ -6,7 +6,7 @@ var pressedVertex2 = -1;
 var edges = [];
 var weight = 10;
 var mouseWasPressed = false; 
-var letterASCIIcode = 65; // A - first character, then ittirates with every character
+var letterASCIIcode = 65; // A - first character, then iterates with every character
 var egdeSelected;
 
 

@@ -12,21 +12,31 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
 </head>
 <body>
-	<h1>Click to add nodes</h1>
-	<p id ="instructions">Click on two nodes to add or select a link. Type to add weights to the links </p>
+	<h1>Network Traffic</h1>
+	<h2>Explore your way through our neworks</h2>
+
+	<button id="play-button"> Play </button>
+	<button id="about-button"> About Us </button>
+	<button id="explore-button"> Build a road or break it down? </button>
+
+	<script type="text/javascript">
+	    document.getElementById("explore-button").onclick = function () {
+	        location.href = "./explore.html";
+	    };
+	</script>
 
 	<!-- <div id="cy"></div> -->
 	
 	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
 	<!-- script for network graph -->
 	<!-- <script src="js/cytoscape.js"></script> -->
 	<!-- script for P5 Sketch -->
-	<script src="js/sketch.js"></script>
+	<!-- <script src="js/sketch.js"></script> -->
 	<!-- script for Algorithm -->
 	<!-- <script src="js/Algorithm.js"></script> -->
 	<!-- script for creating the graph -->
-	<script src="js/graph.js"></script>
+	<!-- <script src="js/graph.js"></script> -->
  	<!-- Custom JavaScript -->
  	<!-- <script src="js/script.js"></script> -->
 

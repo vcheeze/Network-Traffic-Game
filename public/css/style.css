@@ -3,15 +3,14 @@ body {
 }
 
 h1 {
-	maring-top: 25px;
-	margin-left: 50px;
+	padding-top: 5px;
+	margin-left: 100px;
 }
 
-#cy {
-	height: 85%;
-	width: 100%;
-	position: absolute;
-	top: 15%;
-	left: 0;
-	background-color: #F1F1F1; /* added color for visual aid while developing, can remove later */
+#instructions {
+    position: absolute;
+    bottom: 0;
+    margin-left: 100px;
+	padding-bottom: 10px;
 }
+

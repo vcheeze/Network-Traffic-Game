@@ -11,126 +11,126 @@ var egdeSelected;
 
 
 function setup(){
-	createCanvas(windowWidth,windowHeight-160); 
-	textAlign(CENTER,CENTER);
-	textSize(16);
-	textFont("Comfortaa");
+    createCanvas(windowWidth,windowHeight-160); 
+    textAlign(CENTER,CENTER);
+    textSize(16);
+    textFont("Comfortaa");
 }
 
 function draw(){
-	background(200);
-	
-	stroke(175);
-	for ( var edge = 0; edge < edges.length;edge++){
-		edges[edge].displayEdge();	
-	}
+    background(200);
+    
+    stroke(175);
+    for ( var edge = 0; edge < edges.length;edge++){
+        edges[edge].displayEdge();  
+    }
 
-	noStroke();
-	fill(150);
-	for ( var vertex = 0; vertex < vertices.length; vertex++){
-		vertices[vertex].displayVertex();
-	}
+    noStroke();
+    fill(150);
+    for ( var vertex = 0; vertex < vertices.length; vertex++){
+        vertices[vertex].displayVertex();
+    }
 }
 
 function mousePressed(){
-	//draw an edge between two vertices
-	// check if you're pressing on an existing vertex
-	for ( var vertex = 0; vertex < vertices.length; vertex ++){
-		if (vertexPressed(vertices[vertex])){
-			//console.log("vertex %d has been pressed", vertex);
-			
-			if ((pressedVertex2 == -1 && pressedVertex1 == -1) || 
-				(pressedVertex2 != -1 && pressedVertex1 != -1)) {
-				pressedVertex1 = vertices[vertex]; // select first vertex
-				pressedVertex2 = -1;
-			}
-			else if (vertices[vertex] == pressedVertex1) { // deselect
-				pressedVertex1 = -1; pressedVertex2 = -1; 
-			} 
-			else if (vertices[vertex] == pressedVertex1) {
-				pressedVertex2 = -1;
-			}
-			else if (pressedVertex2 == -1) {
-				pressedVertex2 = vertices[vertex];
-				// create edge
+    //draw an edge between two vertices
+    // check if you're pressing on an existing vertex
+    for ( var vertex = 0; vertex < vertices.length; vertex ++){
+        if (vertexPressed(vertices[vertex])){
+            //console.log("vertex %d has been pressed", vertex);
+            
+            if ((pressedVertex2 == -1 && pressedVertex1 == -1) || 
+                (pressedVertex2 != -1 && pressedVertex1 != -1)) {
+                pressedVertex1 = vertices[vertex]; // select first vertex
+                pressedVertex2 = -1;
+            }
+            else if (vertices[vertex] == pressedVertex1) { // deselect
+                pressedVertex1 = -1; pressedVertex2 = -1; 
+            } 
+            else if (vertices[vertex] == pressedVertex1) {
+                pressedVertex2 = -1;
+            }
+            else if (pressedVertex2 == -1) {
+                pressedVertex2 = vertices[vertex];
+                // create edge
 
-				for (var edge = 0; edge < edges.length; edge++){
-					if ((edges[edge].source.x == pressedVertex1.location.x && 
-						edges[edge].source.y == pressedVertex1.location.y &&
-						edges[edge].destination.x == pressedVertex2.location.x &&
-						edges[edge].destination.y == pressedVertex2.location.y) ||
-						(edges[edge].source.x == pressedVertex2.location.x && 
-						edges[edge].source.y == pressedVertex2.location.y &&
-						edges[edge].destination.x == pressedVertex1.location.x &&
-						edges[edge].destination.y == pressedVertex1.location.y)) { // edge exists
-						//console.log("edge selected..?");
-						//var hey = edges[edge].getEdgeFromDestinationAndSource();
-						//console.log('edge', getEdgeFromDestinationAndSource());
-						mouseWasPressed = true;
-						return egdeSelected = edges[edge];
-					}
-				}
-				if (mouseWasPressed) return;
-				mouseWasPressed = true;
-				var newEdge = new Edge(edges.length,pressedVertex1,pressedVertex2,weight);
-				edges.push(newEdge);
-				//console.log('in mouse pressed',edges);
-				// var hey = newEdge.getEdgeFromDestinationAndSource();				
-				//console.log("edges, %d",edges.length); 
-				// console.log('edge', hey);
-				return egdeSelected = edges[edge];
-			} 
-			mouseWasPressed = false;
-			return;
-		} 
-	}
+                for (var edge = 0; edge < edges.length; edge++){
+                    if ((edges[edge].source.x == pressedVertex1.location.x && 
+                        edges[edge].source.y == pressedVertex1.location.y &&
+                        edges[edge].destination.x == pressedVertex2.location.x &&
+                        edges[edge].destination.y == pressedVertex2.location.y) ||
+                        (edges[edge].source.x == pressedVertex2.location.x && 
+                        edges[edge].source.y == pressedVertex2.location.y &&
+                        edges[edge].destination.x == pressedVertex1.location.x &&
+                        edges[edge].destination.y == pressedVertex1.location.y)) { // edge exists
+                        //console.log("edge selected..?");
+                        //var hey = edges[edge].getEdgeFromDestinationAndSource();
+                        //console.log('edge', getEdgeFromDestinationAndSource());
+                        mouseWasPressed = true;
+                        return egdeSelected = edges[edge];
+                    }
+                }
+                if (mouseWasPressed) return;
+                mouseWasPressed = true;
+                var newEdge = new Edge(edges.length,pressedVertex1,pressedVertex2,weight);
+                edges.push(newEdge);
+                //console.log('in mouse pressed',edges);
+                // var hey = newEdge.getEdgeFromDestinationAndSource();             
+                //console.log("edges, %d",edges.length); 
+                // console.log('edge', hey);
+                return egdeSelected = edges[edge];
+            } 
+            mouseWasPressed = false;
+            return;
+        } 
+    }
 
 
-	// create new vertex on mouse press
-	var newVertex = new Vertex(numVertices, String.fromCharCode(letterASCIIcode+numVertices));
-	vertices.push(newVertex);
-	//console.log(" new vertex %d %c",numVertices);
-	//console.log(vertices[numVertices].name);
-	numVertices++; 
+    // create new vertex on mouse press
+    var newVertex = new Vertex(numVertices, String.fromCharCode(letterASCIIcode+numVertices));
+    vertices.push(newVertex);
+    //console.log(" new vertex %d %c",numVertices);
+    //console.log(vertices[numVertices].name);
+    numVertices++; 
 
-	pressedVertex1 = -1; pressedVertex2 = -1; 
+    pressedVertex1 = -1; pressedVertex2 = -1; 
 
 }
 
 function keyPressed() {
-	console.log('in pressed');
-	if (keyCode == ENTER){
-		console.log("ENTER");
-		pressedVertex1 = -1; pressedVertex2 = -1;
-	} else if (pressedVertex1 == -1 || pressedVertex2 == -1){
-		//console.log("do nothing");
-	} else {
-		// console.log(key);
-		if (mouseWasPressed) {
-		    if (keyCode == 32 || keyCode == TAB){
-		    	// if space is the key pressesed do nothing
-		    	return;
-		    } else if (key >= 0 && key <= 9){
-				egdeSelected.weight = egdeSelected.weight + '' + key;
-			// } else if (key == 43 || key == 47 || key == 42 || key == 45 || key == 94){ 
-			//  // tried to implement operators, but couldn't figure it out
-			// 	// ASCII key --> +:43 - /:47 - *:42 - -:45 - 94:^
-			// 	console.log('operator pressed', key);
-			// 	egdeSelected.weight = egdeSelected.weight + '' + key;
-			} else if ((keyCode == DELETE || keyCode == BACKSPACE)) {
-				if (egdeSelected.weight >= 0 && egdeSelected.weight <= 9) egdeSelected.weight = 0;
-				else egdeSelected.weight = parseInt(egdeSelected.weight.toString().slice(0,-1));
-				stopPropagation();
-				window.event.returnValue=false;
-			}
-		}
-	}
+    console.log('in pressed');
+    if (keyCode == ENTER){
+        console.log("ENTER");
+        pressedVertex1 = -1; pressedVertex2 = -1;
+    } else if (pressedVertex1 == -1 || pressedVertex2 == -1){
+        //console.log("do nothing");
+    } else {
+        // console.log(key);
+        if (mouseWasPressed) {
+            if (keyCode == 32 || keyCode == TAB){
+                // if space is the key pressesed do nothing
+                return;
+            } else if (key >= 0 && key <= 9){
+                egdeSelected.weight = egdeSelected.weight + '' + key;
+            // } else if (key == 43 || key == 47 || key == 42 || key == 45 || key == 94){ 
+            //  // tried to implement operators, but couldn't figure it out
+            //  // ASCII key --> +:43 - /:47 - *:42 - -:45 - 94:^
+            //  console.log('operator pressed', key);
+            //  egdeSelected.weight = egdeSelected.weight + '' + key;
+            } else if ((keyCode == DELETE || keyCode == BACKSPACE)) {
+                if (egdeSelected.weight >= 0 && egdeSelected.weight <= 9) egdeSelected.weight = 0;
+                else egdeSelected.weight = parseInt(egdeSelected.weight.toString().slice(0,-1));
+                stopPropagation();
+                window.event.returnValue=false;
+            }
+        }
+    }
 }
 
 
 function windowResized(){
-	resizeCanvas(windowWidth,windowHeight-160);
-	console.log("test");
+    resizeCanvas(windowWidth,windowHeight-160);
+    console.log("test");
 }
 
 /* ALGORITHM CODE */ 
@@ -284,9 +284,9 @@ function Vertex(id, name) {
 }
 
 function vertexPressed(vertex){
-	var d = dist(mouseX, mouseY, vertex.location.x, vertex.location.y);
+    var d = dist(mouseX, mouseY, vertex.location.x, vertex.location.y);
     if (d < vertex.radius*(3/2)) {
-    	return true;
+        return true;
     }
 }
 
@@ -305,7 +305,7 @@ Vertex.prototype.displayVertex = function(){
     else (150);
     ellipse(this.location.x,this.location.y,this.radius*2,this.radius*2);
     fill(255,90);
-	text(this.name,this.location.x,this.location.y);
+    text(this.name,this.location.x,this.location.y);
     pop();
 }
 
@@ -348,30 +348,30 @@ function Edge(id, source, destination, weight) {
     this.id = id;
     
     if (mouseWasPressed) {
-    	this.source = createVector(source.location.x,source.location.y);
-    	this.destination = createVector(destination.location.x,destination.location.y);	
-	} else {
-		this.source = new Vertex();
-		this.destination = new Vertex();
-	}
+        this.source = createVector(source.location.x,source.location.y);
+        this.destination = createVector(destination.location.x,destination.location.y); 
+    } else {
+        this.source = new Vertex();
+        this.destination = new Vertex();
+    }
     this.weight = weight;
 }
 
 
 Edge.prototype.displayEdge = function(){
-	ellipseMode(CENTER);
-	push();
-	//console.log(this.weight);
-	line(this.source.x,this.source.y,this.destination.x,this.destination.y);
-	push();
-	  rotate(atan2(this.destination.y-this.source.y-radius, this.destination.x-this.source.x-radius));
-	  translate(this.destination.x, this.destination.y);
-	  triangle(0, 0, -10, 5, -10, -5);
-	pop();
+    ellipseMode(CENTER);
+    push();
+    //console.log(this.weight);
+    line(this.source.x,this.source.y,this.destination.x,this.destination.y);
+    push();
+      rotate(atan2(this.destination.y-this.source.y-radius, this.destination.x-this.source.x-radius));
+      translate(this.destination.x, this.destination.y);
+      triangle(0, 0, -10, 5, -10, -5);
+    pop();
 
-	fill(50);
-	text(this.weight,(this.source.x+this.destination.x)/2,(this.source.y+this.destination.y)/2);
-	pop();
+    fill(50);
+    text(this.weight,(this.source.x+this.destination.x)/2,(this.source.y+this.destination.y)/2);
+    pop();
 }
 
 Edge.prototype.getId = function() {
@@ -387,25 +387,25 @@ Edge.prototype.getSource = function() {
 };
 
 // Edge.prototype.getEdgeFromDestinationAndSource = function(){
-// 	var edge;
-// 	for (edge = 0; edge <= edges.length-1; edge++){
+//  var edge;
+//  for (edge = 0; edge <= edges.length-1; edge++){
 
-// 			console.log(edges[edge].source, pressedVertex1.location);
-// 		if (edges[edge].source.x == pressedVertex1.location.x && 
-// 			edges[edge].source.y == pressedVertex1.location.y &&
-// 			edges[edge].destination.x == pressedVertex2.location.x &&
-// 			edges[edge].destination.y == pressedVertex2.location.y) {
-// 			return egdeSelected = edges[edge];
+//          console.log(edges[edge].source, pressedVertex1.location);
+//      if (edges[edge].source.x == pressedVertex1.location.x && 
+//          edges[edge].source.y == pressedVertex1.location.y &&
+//          edges[edge].destination.x == pressedVertex2.location.x &&
+//          edges[edge].destination.y == pressedVertex2.location.y) {
+//          return egdeSelected = edges[edge];
 
-// 		} else if (edges[edge].source.x == pressedVertex2.location.x && 
-// 			edges[edge].source.y == pressedVertex2.location.y &&
-// 			edges[edge].destination.x == pressedVertex2.location.x &&
-// 			edges[edge].destination.y == pressedVertex2.location.y){
-// 			return egdeSelected = edges[edge];
-// 		} else {
-// 			return 5;
-// 		}
-// 	}
+//      } else if (edges[edge].source.x == pressedVertex2.location.x && 
+//          edges[edge].source.y == pressedVertex2.location.y &&
+//          edges[edge].destination.x == pressedVertex2.location.x &&
+//          edges[edge].destination.y == pressedVertex2.location.y){
+//          return egdeSelected = edges[edge];
+//      } else {
+//          return 5;
+//      }
+//  }
 // };
 
 Edge.prototype.getWeight = function() {

@@ -120,6 +120,8 @@ function keyPressed() {
 			} else if ((keyCode == DELETE || keyCode == BACKSPACE)) {
 				if (egdeSelected.weight >= 0 && egdeSelected.weight <= 9) egdeSelected.weight = 0;
 				else egdeSelected.weight = parseInt(egdeSelected.weight.toString().slice(0,-1));
+				stopPropagation();
+				window.event.returnValue=false;
 			}
 		}
 	}
@@ -361,6 +363,12 @@ Edge.prototype.displayEdge = function(){
 	push();
 	//console.log(this.weight);
 	line(this.source.x,this.source.y,this.destination.x,this.destination.y);
+	push();
+	  rotate(atan2(this.destination.y-this.source.y-radius, this.destination.x-this.source.x-radius));
+	  translate(this.destination.x, this.destination.y);
+	  triangle(0, 0, -10, 5, -10, -5);
+	pop();
+
 	fill(50);
 	text(this.weight,(this.source.x+this.destination.x)/2,(this.source.y+this.destination.y)/2);
 	pop();

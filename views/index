@@ -12,13 +12,12 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
 </head>
 <body>
-	<h1 class = "index" id="title">Network Traffic</h1>
-	<h2 class = "index" >Explore your way through our neworks</h2>
+	<h1>Network Traffic</h1>
+	<h2>Explore your way through our neworks</h2>
 
-	<button class = "index button"  id="tutorial-button"> Walk through </button>
-	<button class = "index button" id="play-button" > Play the game </button>
-	<button class = "index button" id="explore-button"> Build a road or break it down? </button>
-	<button class = "index button" id="about-button"> About Us </button>
+	<button id="play-button"> Play </button>
+	<button id="about-button"> About Us </button>
+	<button id="explore-button"> Build a road or break it down? </button>
 
 	<script type="text/javascript">
 	    document.getElementById("explore-button").onclick = function () {

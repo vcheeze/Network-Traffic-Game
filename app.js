@@ -41,6 +41,11 @@ app.get("/about", function(req, res) {
 	res.render("about");
 });
 
+// Documentation route
+app.get("/explore", function(req, res) {
+	res.render("explore");
+});
+
 // Everything else
 app.get("*", function(req, res) {
 	res.send("This ain't workin' man. Check the URL and try again.");

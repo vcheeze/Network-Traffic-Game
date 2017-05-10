@@ -12,13 +12,12 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
 </head>
 <body>
-	<h1 class = "index" id="title">Network Traffic</h1>
-	<h2 class = "index" >Explore your way through our neworks</h2>
+	<h1>Network Traffic</h1>
+	<h2>Explore your way through our neworks</h2>
 
-	<button class = "index button"  id="tutorial-button"> Walk through </button>
-	<button class = "index button" id="play-button" > Play the game </button>
-	<button class = "index button" id="explore-button"> Build a road or break it down? </button>
-	<button class = "index button" id="about-button"> About Us </button>
+	<button id="play-button"> Play </button>
+	<button id="about-button"> About Us </button>
+	<button id="explore-button"> Build a road or break it down? </button>
 
 	<script type="text/javascript">
 	    document.getElementById("explore-button").onclick = function () {
@@ -29,15 +28,9 @@
 	<!-- <div id="cy"></div> -->
 	
 	<!-- jQuery -->
-<<<<<<< HEAD
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	<!-- script for Algorithm -->
-	<script src="js/Algorithm.js"></script>
-=======
 	<!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
 	<!-- script for network graph -->
 	<!-- <script src="js/cytoscape.js"></script> -->
->>>>>>> 9abb26786a42681a8bdee7145a9ca45f23329221
 	<!-- script for P5 Sketch -->
 	<!-- <script src="js/sketch.js"></script> -->
 	<!-- script for Algorithm -->

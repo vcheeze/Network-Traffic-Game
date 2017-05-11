@@ -110,14 +110,15 @@ function keyPressed() {
             if (keyCode == 32 || keyCode == TAB){
                 // if space is the key pressesed do nothing
                 return;
-            } else if (key >= 0 && key <= 9){
-                egdeSelected.weight = egdeSelected.weight + '' + key;
+            } else if ((key >= 0 && key <= 9) || key == 'X'){
+                console.log(key);
+                egdeSelected.weight = String(egdeSelected.weight) + '' + key;
             // } else if (key == 43 || key == 47 || key == 42 || key == 45 || key == 94){ 
             //  // tried to implement operators, but couldn't figure it out
             //  // ASCII key --> +:43 - /:47 - *:42 - -:45 - 94:^
             //  console.log('operator pressed', key);
             //  egdeSelected.weight = egdeSelected.weight + '' + key;
-            } else if ((keyCode == DELETE || keyCode == BACKSPACE)) {
+            } else if ((key == 'B' || keyCode == BACKSPACE || keyCode == DELETE)) {
                 if (egdeSelected.weight >= 0 && egdeSelected.weight <= 9) egdeSelected.weight = 0;
                 else egdeSelected.weight = parseInt(egdeSelected.weight.toString().slice(0,-1));
                 stopPropagation();

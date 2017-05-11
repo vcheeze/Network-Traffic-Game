@@ -142,7 +142,17 @@ Graph.prototype.getEdges = function() {
 function Vertex(id, name) {
     this.id = id;
     this.name = name;
+    this.radius = radius;
+    this.location = createVector(mouseX, mouseY);
 }
+
+
+// function Vertex(number){
+//     this.name = number;
+//     this.radius = radius;
+//     this.location = createVector(mouseX, mouseY);   
+// }
+
 
 Vertex.prototype.getId = function() {
     return this.id;
@@ -151,6 +161,16 @@ Vertex.prototype.getId = function() {
 Vertex.prototype.getName = function() {
     return this.name;
 };
+
+Vertex.prototype.displayVertex = function() {
+    ellipseMode(CENTER);
+    push();
+    if (this == pressedVertex1 || this == pressedVertex2) fill(0,0,200); 
+    ellipse(this.location.x,this.location.y,this.radius*2,this.radius*2);
+    fill(100);
+    pop();
+};
+
 
 /*Vertex.prototype.hashCode = function() {
     var prime = 31;
@@ -211,3 +231,6 @@ Edge.prototype.getWeight = function() {
 Edge.prototype.toString = function() {
     return this.source + " " + this.destination;
 };
+
+
+

@@ -1,20 +1,26 @@
 /**
  * Created by vcheeze on 5/4/17.
  */
+
 var scenario = 1;
-var total, x, y, vertexes, edges;
+var total, x, y, vertexes = [], edges = [];
 switch (scenario) {
     /*========== Scenario 1 ==========*/
     case 1:
         total = 1000;
         x = 500, y = total - x;
 
-        vertexes = [
-            new Vertex('0', 'a'),
-            new Vertex('1', 'b'),
-            new Vertex('2', 'c'),
-            new Vertex('3', 'd')
-        ];
+        for (var i = 0; i < 4; i++) {
+            var v = new Vertex(i.toString(), String.fromCharCode(97 + i));
+            vertexes.push(v);
+        }
+
+/*        vertexes = [
+            var a = new Vertex('0', 'a'),
+            var b = new Vertex('1', 'b'),
+            var c = new Vertex('2', 'c'),
+            var d = new Vertex('3', 'd')
+        ];*/
 
         edges = [
             new Edge('0', vertexes[0], vertexes[2], x/100),

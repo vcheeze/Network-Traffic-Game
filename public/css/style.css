@@ -3,15 +3,38 @@ body {
 }
 
 h1 {
-	maring-top: 25px;
-	margin-left: 50px;
+	padding-top: 5px;
+	margin-left: 100px;
 }
 
-#cy {
-	height: 85%;
-	width: 100%;
-	position: absolute;
-	top: 15%;
-	left: 0;
-	background-color: #F1F1F1; /* added color for visual aid while developing, can remove later */
+.index{
+	margin-left: 200px;
+	display: block;
 }
+
+.button {
+    background-color: rgba(100,150,230,0.5);
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#title{
+	font-size: 80px;
+	margin-top: 8%;
+	margin-bottom: 2%;
+}
+
+#instructions {
+    position: absolute;
+    bottom: 0;
+    margin-left: 100px;
+	padding-bottom: 10px;
+}
+

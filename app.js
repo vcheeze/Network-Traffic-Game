@@ -41,9 +41,14 @@ app.get("/about", function(req, res) {
 	res.render("about");
 });
 
-// Documentation route
+// Explore route
 app.get("/explore", function(req, res) {
 	res.render("explore");
+});
+
+// Walk-through route
+app.get("/walkthrough", function(req, res) {
+	res.render("walkthrough");
 });
 
 // Everything else

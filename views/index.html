@@ -11,13 +11,13 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
 </head>
-<body>
+<body onmouseover="indexScript();">
 	<h1 class = "index" id="title">Network Traffic</h1>
 	<h2 class = "index" >Explore your way through our neworks</h2>
 
-	<button class = "index button"  id="tutorial-button"> Walk through </button>
+	<button class = "index button"  id="walkthrough-button"> Walk through </button>
 	<button class = "index button" id="play-button" > Play the game </button>
-	<button class = "index button" id="explore-button"> Build a road or break it down? </button>
+	<button class = "index button" id="explore-button"> Explore </button>
 	<button class = "index button" id="about-button"> About Us </button>
 
 	<script type="text/javascript">
@@ -27,8 +27,16 @@
 	    document.getElementById("about-button").onclick = function() {
 	        location.href = "about";
 		};
-	</script>
+	    document.getElementById("walkthrough-button").onclick = function() {
+	        location.href = "walkthrough";
+		};	</script>
 
 	<!-- <div id="cy"></div> -->
 </body>
 </html>
+<script type="text/javascript">
+	function indexScript(){
+	    // document.getElementById("explore-button").style.left = windowWidth/2 + "px";
+	    // document.getElementById("explore-button").style.top = windowHeight/2 + "px";
+	}
+</script>

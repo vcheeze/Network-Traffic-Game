@@ -8,6 +8,11 @@ var weight = 10;
 var mouseWasPressed = false; 
 var letterASCIIcode = 65; // A - first character, then iterates with every character
 var egdeSelected;
+var walkthroughState = 1; 
+var state1 = true;
+var state2 = false; 
+var state3 = false;
+var state4 = false;
 
 
 function setup(){
@@ -18,7 +23,8 @@ function setup(){
 }
 
 function draw(){
-    background(200);
+    background(240);
+    // walkthrough();
     
     stroke(175);
     for ( var edge = 0; edge < edges.length;edge++){
@@ -30,7 +36,37 @@ function draw(){
     for ( var vertex = 0; vertex < vertices.length; vertex++){
         vertices[vertex].displayVertex();
     }
+
 }
+
+function walkthrough(){
+        if (state4){
+            document.getElementById("state-4").style.visibility = "visible"; 
+            document.getElementById("state-3").style.visibility = "hidden"; 
+            document.getElementById("state-2").style.visibility = "hidden"; 
+            document.getElementById("state-1").style.visibility = "hidden"; 
+        } else if (state3){
+            document.getElementById("state-4").style.visibility = "hidden"; 
+            document.getElementById("state-3").style.visibility = "visible"; 
+            document.getElementById("state-2").style.visibility = "hidden"; 
+            document.getElementById("state-1").style.visibility = "hidden";            
+        } else if (state2){
+            document.getElementById("state-4").style.visibility = "hidden"; 
+            document.getElementById("state-3").style.visibility = "hidden"; 
+            document.getElementById("state-2").style.visibility = "visible"; 
+            document.getElementById("state-1").style.visibility = "hidden";            
+        } else if (state1){
+            document.getElementById("state-4").style.visibility = "hidden"; 
+            document.getElementById("state-3").style.visibility = "hidden"; 
+            document.getElementById("state-2").style.visibility = "hidden"; 
+            document.getElementById("state-1").style.visibility = "visible";            
+        }
+}
+
+// function indexScript(){
+//     document.getElementById("explore-button").style.left = windowWidth/2 + "px";
+//     document.getElementById("explore-button").style.top = windowHeight/2 + "px";
+// }
 
 function mousePressed(){
     //draw an edge between two vertices
@@ -74,6 +110,7 @@ function mousePressed(){
                 mouseWasPressed = true;
                 var newEdge = new Edge(edges.length,pressedVertex1,pressedVertex2,weight);
                 edges.push(newEdge);
+                state3 = true;
                 //console.log('in mouse pressed',edges);
                 // var hey = newEdge.getEdgeFromDestinationAndSource();             
                 //console.log("edges, %d",edges.length); 
@@ -89,6 +126,7 @@ function mousePressed(){
     // create new vertex on mouse press
     var newVertex = new Vertex(numVertices, String.fromCharCode(letterASCIIcode+numVertices));
     vertices.push(newVertex);
+    state2 = true;
     //console.log(" new vertex %d %c",numVertices);
     //console.log(vertices[numVertices].name);
     numVertices++; 
@@ -112,7 +150,9 @@ function keyPressed() {
                 return;
             } else if ((key >= 0 && key <= 9) || key == 'X'){
                 console.log(key);
-                egdeSelected.weight = String(egdeSelected.weight) + '' + key;
+                if (egdeSelected.weight == 0) egdeSelected.weight = key;
+                else egdeSelected.weight = String(egdeSelected.weight) + '' + key;
+                state4 = true;
             // } else if (key == 43 || key == 47 || key == 42 || key == 45 || key == 94){ 
             //  // tried to implement operators, but couldn't figure it out
             //  // ASCII key --> +:43 - /:47 - *:42 - -:45 - 94:^
@@ -367,7 +407,7 @@ Edge.prototype.displayEdge = function(){
     push();
       rotate(atan2(this.destination.y-this.source.y-radius, this.destination.x-this.source.x-radius));
       translate(this.destination.x, this.destination.y);
-      triangle(0, 0, -10, 5, -10, -5);
+      triangle(0, 0, -10, -20, -20, -10);
     pop();
 
     fill(50);

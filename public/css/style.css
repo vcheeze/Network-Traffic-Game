@@ -7,12 +7,23 @@ h1 {
 	margin-left: 100px;
 }
 
+.walkthrough-instructions {
+    color: rgb(100,150,230);    
+    position: fixed;
+    right: 50%;
+    bottom: 40%;
+    visibility: hidden;
+    margin-left: 100px;
+    text-align: right; 
+}
+
 .index{
 	margin-left: 200px;
 	display: block;
 }
 
 .button {
+    cursor: pointer;
     background-color: rgba(100,150,230,0.5);
     border: none;
     color: white;
@@ -21,8 +32,13 @@ h1 {
     text-decoration: none;
     /*display: inline-block;*/
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 15px;
     cursor: pointer;
+}
+
+#run-button{
+    background-color: rgba(100,150,230);
+    margin-left: 20px; 
 }
 
 #title{
@@ -34,7 +50,7 @@ h1 {
 #instructions {
     position: absolute;
     bottom: 0;
-    margin-left: 100px;
-	padding-bottom: 10px;
+    right: 350px;
+	padding-bottom: 0px;
 }
 

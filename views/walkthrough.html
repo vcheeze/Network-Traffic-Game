@@ -14,14 +14,19 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
 </head>
-<body>
-	<h1>Explore</h1>
+<body onmouseover="walkthrough();">
+	<h1 id="walkthrough-page">Walk Through</h1>
+
+	<h2 id = "state-1" class = "walkthrough-instructions">Click on the canvas to create a new node</h2>
+	<h2 id = "state-2" class = "walkthrough-instructions">Click on two nodes to create or select a link.</h2>
+	<h2 id = "state-3" class = "walkthrough-instructions">Type in digits to add weights to the links, or type x to indicate number of lines</h2>
+	<h2 id = "state-3" class = "walkthrough-instructions">Press on Run to run the simlution</h2>
+	<h2 id = "state-4" class = "walkthrough-instructions">Ready to run?</h2>
+
 	<p id ="instructions">Click to create a new node. Click on two nodes to add or select a link. Type to add weights to the links		
 	<button class = "button" id="run-button"> Run </button>
 	</p>
-	<!-- <button class = "button" id="run-button"> Run </button> -->
-	<!-- <div id="cy"></div> -->
-	
+
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<!-- script for P5 Sketch -->
